@@ -9,7 +9,7 @@ You can use this application to:
 * Remove completed Todo items
 
 Walkthrough of the Todo Application:
-!Walthrough(ToDo.gif)
+![Walthrough](ToDo.gif)
 *Gif created with [LiceCap](http://www.cockos.com/licecap/).*
 
 Planned improvements include:
