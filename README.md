@@ -10,6 +10,7 @@ You can use this application to:
 
 Walkthrough of the Todo Application:
 ![Walthrough](ToDo.gif)
+
 *Gif created with [LiceCap](http://www.cockos.com/licecap/).*
 
 Planned improvements include:
