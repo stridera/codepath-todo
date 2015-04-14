@@ -13,6 +13,15 @@ Walkthrough of the Todo Application:
 
 *Gif created with [LiceCap](http://www.cockos.com/licecap/).*
 
+
+Requirements Complete:
+* [x] Can add and remove items.
+* [x] Can edit items via a new activity
+* [x] Items persist via file read and write
+* [x] Code pushed to Github
+* [x] Readme with GIF walkthrough
+* [x] Issue created
+
 Planned improvements include:
 * Add Deadline with Alerts
 * Swipe to the left to mark as completed
