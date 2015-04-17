@@ -22,6 +22,12 @@ Requirements Complete:
 * [x] Readme with GIF walkthrough
 * [x] Issue created
 
+Optional Suggestions Added:
+* [x] Added Priority
+* [x] Changed backend to use SQLite via ActiveAndroid
+* [x] Added a FragmentDialog for adding new items.
+* [x] Display items using a custom adapter (Item with Priority)
+
 Planned improvements include:
 * Add Deadline with Alerts
 * Swipe to the left to mark as completed
