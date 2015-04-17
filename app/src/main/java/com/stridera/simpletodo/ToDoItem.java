@@ -3,18 +3,15 @@ package com.stridera.simpletodo;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 /**
  * Manage the items via SQLite
  */
 @Table(name = "ToDoItem")
 public class ToDoItem extends Model {
-
-    @Column(name="id", key = true, unique = true)
-    public long id;
-
     @Column(name = "title")
     public String Title;
 
@@ -25,14 +22,17 @@ public class ToDoItem extends Model {
         super();
     }
 
-    public ToDoItem(int id, String title) {
-        super();
-        this.Title = title;
-        this.Priority = 3;
+    public ToDoItem(String title) {
+        this(title, 3);
     }
 
+    public ToDoItem(String title, int priority) {
+        super();
+        this.Title = title;
+        this.Priority = priority;
+    }
 
-    public static Collection<? extends String> loadAll() {
-        return null;
+    public static ArrayList<ToDoItem> loadAll() {
+        return new Select().from(ToDoItem.class).execute();
     }
 }

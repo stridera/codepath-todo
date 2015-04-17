@@ -5,38 +5,43 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /**
  * Created by mjones on 4/16/15.
  */
-public class TodoCursorAdapter extends CursorAdapter {
-    public TodoCursorAdapter(Context context, Cursor cursor) {
-        super(context, cursor);
+public class TodoAdapter extends ArrayAdapter<ToDoItem> {
+    public TodoAdapter(Context context, ArrayList<ToDoItem> toDoItem) {
+        super(context, 0, toDoItem);
     }
 
     @Override
-    public View newView(Context context, Cursor cursor, ViewGroup parent)
+    public View getView(int position, View view, ViewGroup parent)
     {
-        return LayoutInflater.from(context).inflate(R.layout.item_todo, parent, false);
-    }
+        ToDoItem item = getItem(position);
 
-    @Override
-    public void bindView(View view, Context context, Cursor cursor) {
+        if (view == null) {
+            view = LayoutInflater.from(getContext()).inflate(R.layout.item_todo, parent, false);
+        }
+
         TextView tvTitle = (TextView) view.findViewById(R.id.tvTitle);
         TextView tvPriority = (TextView) view.findViewById(R.id.tvPriority);
 
-        String title = cursor.getString(cursor.getColumnIndexOrThrow("title"));
-        int priority = cursor.getInt(cursor.getColumnIndexOrThrow("priority"));
+        String title = item.Title;
         String priorityString;
-        switch (priority) {
+        switch (item.Priority) {
             case 1: priorityString = "High"; break;
             case 2: priorityString = "Medium"; break;
             case 3: priorityString = "Low"; break;
-            default: priorityString = "Unknown " + String.valueOf(priority);
+            default: priorityString = "Unknown " + String.valueOf(item.Priority);
         }
         tvTitle.setText(title);
         tvPriority.setText(priorityString);
+
+        return view;
     }
 }
