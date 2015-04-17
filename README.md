@@ -8,12 +8,11 @@ You can use this application to:
 * Edit existing Todo items
 * Remove completed Todo items
 
-Walkthrough of the Todo Application:
-![Walthrough](ToDo.gif)
-
-*Gif created with [LiceCap](http://www.cockos.com/licecap/).*
+### Walkthrough of the Todo Application
+![Walthrough](ToDoV2.gif)
 
 
+### Features
 Requirements Complete:
 * [x] Can add and remove items.
 * [x] Can edit items via a new activity
@@ -32,3 +31,11 @@ Planned improvements include:
 * Add Deadline with Alerts
 * Swipe to the left to mark as completed
 * Swipe to the right to snooze
+
+
+### Old Walkthroughs:
+
+#### Version 1
+![Version 1](ToDoV1.gif)
+
+*Gif created with [LiceCap](http://www.cockos.com/licecap/).*
