@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 
 public class EditItemActivity extends ActionBarActivity {
@@ -18,13 +19,17 @@ public class EditItemActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_item);
         EditText etEditField = (EditText) findViewById(R.id.etEditItem);
+        Spinner priorities = (Spinner) findViewById(R.id.priorities);
 
         Intent intent = getIntent();
 
-        String item = intent.getStringExtra("item");
         position = intent.getIntExtra("position", 0);
 
+        String item = intent.getStringExtra("item");
+        int priority = intent.getIntExtra("priority", 0);
+
         etEditField.setText(item);
+        priorities.setSelection(priority - 1);
     }
 
 
@@ -52,8 +57,12 @@ public class EditItemActivity extends ActionBarActivity {
 
     public void onItemSave(View v) {
         EditText etEditField = (EditText) findViewById(R.id.etEditItem);
+        Spinner priorities = (Spinner) findViewById(R.id.priorities);
+        int priority = priorities.getSelectedItemPosition() + 1;
+
         Intent data = new Intent();
         data.putExtra("item", etEditField.getText().toString());
+        data.putExtra("priority", priority);
         data.putExtra("position", position);
         setResult(RESULT_OK, data);
         finish();

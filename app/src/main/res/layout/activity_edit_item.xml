@@ -32,9 +32,20 @@
         android:layout_height="wrap_content"
         android:text="Save"
         android:id="@+id/btnSaveEdit"
+        android:onClick="onItemSave"
+        android:layout_below="@+id/priorities"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/priorities"
         android:layout_below="@+id/etEditItem"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="onItemSave" />
+        android:entries="@array/priorities"
+        android:prompt="@string/prioritiesPrompt"
+        android:spinnerMode="dropdown" />
 
 </RelativeLayout>
